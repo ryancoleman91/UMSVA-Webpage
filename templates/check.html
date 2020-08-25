@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+  <div class="title">
+    Logged In
+  </div>
+  <div class="main">
+      Welcome {{e}}
+      <br><br>
+
+      {% for time,First_Name,Last_Name,ID,Degree,Major,Minors,Term,Year,Chapter,Courses in comb_list %}
+      First Name: {{First_Name}} &nbsp;<br>
+      Last Name: {{Last_Name}} &nbsp;<br>
+      Student ID: {{ID}} &nbsp;<br>
+      Degree: {{Degree}} &nbsp;<br>
+      Major: {{Major}} &nbsp;<br>
+      Minors: {{Minors}} &nbsp;<br>
+      Term: {{Term}} &nbsp;<br>
+      Year: {{Year}} &nbsp;<br>
+      Chapter: {{Chapter}} &nbsp;<br>
+      Courses: {{Courses}} &nbsp;<br>
+      <br>
+      {% endfor %}
+
+  </div>
+</div>
+{% endblock %}

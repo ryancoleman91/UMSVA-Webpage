@@ -1,0 +1,23 @@
+<!-- templates/home.html-->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content %}
+  <div class="main-content">
+    <div class="title">
+    </div>
+    <div class="main">
+      <div class="widget">
+        <div class="title">Welcome</div>
+        <img src="{% static 'Flag.jpg' %}" alt="Flag" width="60" height="90">
+      </div>
+      <div class="widget">
+        <div class="title">News</div>
+      </div>
+    </div>
+  </div>
+{% endblock content%}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% if messg %}
+<script>
+  alert('{{ messg }}');
+</script>
+{% endif %}
+<div class="main-content">
+  <div class="title">
+    Sign Up
+  </div>
+  <div class="main">
+      <form action="/postsignup/" method="post">
+        {% csrf_token %}
+        Name :
+        <input type='text' name='name'><br><br>
+        Email :
+        <input type="email" name="email"><br><br>
+        Password :
+        <input type="password" name="pass"><br><br>
+        <input type="submit" value="Signup">
+      </form>
+  </div>
+</div>
+{% endblock %}

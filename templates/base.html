@@ -1,0 +1,83 @@
+<!-- templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="{% static 'dashboard.js' %}"></script>
+ <title>UMSVA</title>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <i class="fa fa-flag" aria-hidden="true"></i>
+      <span>UMSVA</span>
+    </div>
+    <a href="#" class="nav-trigger"><span></span></a>
+  </div>
+  <div class="side-nav">
+    <div class="logo">
+      <i class="fa fa-flag" aria-hidden="true"></i>
+      <span>UMSVA</span>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href={% url "home" %}>
+            <span><i class="fa fa-home"></i></span>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url "home" %}>
+            <span><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+            <span>News</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url "home" %}>
+            <span><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+            <span>TAF Form</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url "login" %}>
+            <span><i class="fa fa-dropbox" aria-hidden="true"></i></span>
+            <span>Login</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url "logout" %}>
+            <span><i class="fa fa-dropbox" aria-hidden="true"></i></span>
+            <span>Logout</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url "signup" %}>
+            <span><i class="fa fa-dropbox" aria-hidden="true"></i></span>
+            <span>Signup</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  </body>
+</html>

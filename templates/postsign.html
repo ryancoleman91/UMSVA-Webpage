@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+  <div class="title">
+    Logged In
+  </div>
+  <div class="main">
+      Welcome {{e}}
+      <br><br>
+      <button type="button" onclick="location.href='{% url 'create' %}'">Update TAF Form</button><br>
+      <button type="button" onclick="location.href='{% url 'check' %}'">Check TAF Form</button><br>
+  </div>
+</div>
+{% endblock %}

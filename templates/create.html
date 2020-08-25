@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% if messg %}
+<script>
+  alert('{{ messg }}');
+</script>
+{% endif %}
+<div class="main-content">
+  <div class="title">
+    TAF FORM
+  </div>
+  <div class="main">
+      <form action="/postcreate/" method="post">
+        {% csrf_token %}
+        First Name:
+        <input type="text" name="First" required><br><br>
+        Last Name:
+        <input type="text" name="Last" required><br><br>
+        Student ID:
+        <input type="text" name="ID" required><br><br>
+        Degree:
+        <input type="text" name="Degree" required><br><br>
+        Major:
+        <input type="text" name="Major" required><br><br>
+        Minors?
+        <input type="text" name="Minors" required><br><br>
+        Term:
+        <input type="text" name="Term" required><br><br>
+        Year:
+        <input type="text" name="Year" required><br><br>
+        Chapter of Benefits:
+        <input type="text" name="Chapter" required><br><br>
+        Courses:
+        <textarea rows="5" cols="40" name ='Courses' required></textarea>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+{% if messg %}
+<script>
+  alert('{{ messg }}');
+</script>
+{% endif %}
+<div class="main-content">
+  <div class="title">
+    Login
+  </div>
+  <div class="main">
+      <form action="/postsign/" method="post">
+        {% csrf_token %}
+        Email :
+        <input type="email" name="email"><br><br>
+        Password :
+        <input type="password" name="pass"><br><br>
+        <input type="submit" value="SignIn">
+      </form>
+  </div>
+</div>
+{% endblock %}
